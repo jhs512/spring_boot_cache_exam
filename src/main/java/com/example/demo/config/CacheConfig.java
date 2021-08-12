@@ -1,4 +1,8 @@
-package com.example.demo;
+package com.example.demo.config;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.EnableCaching;
@@ -11,6 +15,13 @@ import org.springframework.context.annotation.Configuration;
 public class CacheConfig {
 	@Bean
 	public CacheManager cacheManager() {
-		return new ConcurrentMapCacheManager("common");
+		ConcurrentMapCacheManager cacheManager = new ConcurrentMapCacheManager("common");
+
+		List<String> names = new ArrayList<>(
+				Arrays.asList("RandomNumberGenerator__getRandom", "RandomNumberGenerator__getRandom2"));
+
+		cacheManager.setCacheNames(names);
+
+		return cacheManager;
 	}
 }

@@ -26,11 +26,33 @@ public class UsrHomeController {
 
 		return "캐시비우기";
 	}
-	
+
 	@RequestMapping("/usr/home/doAbandonCacheDataAboutGetRandom")
 	@ResponseBody
 	String doAbandonCacheDataAboutGetRandom(int addNum) {
 		randomNumberGenerator.doAbandonCacheDataAboutGetRandom(addNum);
+
+		return "캐시비우기";
+	}
+
+	@RequestMapping("/usr/home/main2")
+	@ResponseBody
+	int showMain2(int addNum) {
+		return randomNumberGenerator.getRandom2(addNum);
+	}
+
+	@RequestMapping("/usr/home/doAbandonCacheDataAllAboutGetRandom2")
+	@ResponseBody
+	String doAbandonCacheDataAllAboutGetRandom2() {
+		randomNumberGenerator.doAbandonCacheDataAllAboutGetRandom2();
+
+		return "캐시비우기";
+	}
+
+	@RequestMapping("/usr/home/doAbandonCacheDataAboutGetRandom2")
+	@ResponseBody
+	String doAbandonCacheDataAboutGetRandom2(int addNum) {
+		randomNumberGenerator.doAbandonCacheDataAboutGetRandom2(addNum);
 
 		return "캐시비우기";
 	}
