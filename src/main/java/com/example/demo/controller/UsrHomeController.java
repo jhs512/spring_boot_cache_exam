@@ -15,14 +15,22 @@ public class UsrHomeController {
 
 	@RequestMapping("/usr/home/main")
 	@ResponseBody
-	int showMain() {
-		return randomNumberGenerator.getRandom();
+	int showMain(int addNum) {
+		return randomNumberGenerator.getRandom(addNum);
 	}
 
-	@RequestMapping("/usr/home/abandonGetRandomCacheData")
+	@RequestMapping("/usr/home/doAbandonCacheDataAllAboutGetRandom")
 	@ResponseBody
-	String doAbandonGetRandomCacheData() {
-		randomNumberGenerator.abandonGetRandomCacheData();
+	String doAbandonCacheDataAllAboutGetRandom() {
+		randomNumberGenerator.doAbandonCacheDataAllAboutGetRandom();
+
+		return "캐시비우기";
+	}
+	
+	@RequestMapping("/usr/home/doAbandonCacheDataAboutGetRandom")
+	@ResponseBody
+	String doAbandonCacheDataAboutGetRandom(int addNum) {
+		randomNumberGenerator.doAbandonCacheDataAboutGetRandom(addNum);
 
 		return "캐시비우기";
 	}
