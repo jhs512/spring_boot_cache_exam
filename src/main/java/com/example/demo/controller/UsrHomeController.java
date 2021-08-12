@@ -60,7 +60,7 @@ public class UsrHomeController {
 
 		return "캐시비우기";
 	}
-	
+
 	@RequestMapping("/usr/home/addArticle")
 	@ResponseBody
 	String doAddArticle(Article article) {
@@ -68,7 +68,7 @@ public class UsrHomeController {
 
 		return "캐시비우기";
 	}
-	
+
 	@RequestMapping("/usr/home/getArticle")
 	@ResponseBody
 	Article getArticle(int id) {
