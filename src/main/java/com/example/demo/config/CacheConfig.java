@@ -18,7 +18,7 @@ public class CacheConfig {
 		ConcurrentMapCacheManager cacheManager = new ConcurrentMapCacheManager("common");
 
 		List<String> names = new ArrayList<>(
-				Arrays.asList("RandomNumberGenerator__getRandom", "RandomNumberGenerator__getRandom2"));
+				Arrays.asList("RandomNumberGenerator__getRandom", "RandomNumberGenerator__getRandom2", "ArticleRepository__addArticleCached"));
 
 		cacheManager.setCacheNames(names);
 
