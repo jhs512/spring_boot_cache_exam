@@ -12,10 +12,18 @@ import com.example.demo.util.RandomNumberGenerator;
 public class UsrHomeController {
 	@Autowired
 	RandomNumberGenerator randomNumberGenerator;
-	
+
 	@RequestMapping("/usr/home/main")
 	@ResponseBody
 	int showMain() {
 		return randomNumberGenerator.getRandom();
+	}
+
+	@RequestMapping("/usr/home/abandonGetRandomCacheData")
+	@ResponseBody
+	String doAbandonGetRandomCacheData() {
+		randomNumberGenerator.abandonGetRandomCacheData();
+
+		return "캐시비우기";
 	}
 }
