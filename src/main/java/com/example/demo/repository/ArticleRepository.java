@@ -13,7 +13,7 @@ public class ArticleRepository {
 		return article;
 	}
 
-	@Cacheable("ArticleRepository__addArticleCached")
+	@Cacheable(cacheNames = "ArticleRepository__addArticleCached", unless = "#result == null")
 	public Article getArticleCached(int id) {
 		return null;
 	}
